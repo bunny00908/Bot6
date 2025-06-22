@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright, TimeoutError
 from faker import Faker
 import requests
 
-TELEGRAM_TOKEN = 'YOUR_BOT_TOKEN'  # <-- Replace with your Telegram bot token!
+TELEGRAM_TOKEN = '7495663085:AAH8Mr2aZK7DrS8DFHTxhKqN9uJU1DSNtd0'  # <-- Replace with your Telegram bot token!
 USER_DATA_FILE = "user_data.json"
 PROXY_FILE = "proxy.txt"  # optional, put proxies here
 fake = Faker("en_US")     # always USA fake data
@@ -286,7 +286,7 @@ def build_reply(card, price, status, response, t_taken, user, dev="bunny"):
 ┃ [ﾒ] Checked By: {user}
 ━━═━━═━━═━━═━━
 ┃ [ㇺ] Dev ➺ {dev} 
-┗━━━ 〄 SPYxCHK ━━━┛
+┗━━━ 𝗕𝗨𝗡𝗡𝗬 ━━━┛
 """
 
 if __name__ == "__main__":
