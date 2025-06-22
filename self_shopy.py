@@ -44,7 +44,11 @@ def get_random_proxy(proxies):
     return random.choice(proxies)
 
 def start(update, context):
-    update.message.reply_text("Send /setsite <shopify-url> to begin (e.g. /setsite https://nexbelt.com)")
+    update.message.reply_text(
+        "Send /setsite <shopify-url> to begin (e.g. /setsite https://nexbelt.com)\n"
+        "After setting your site, use /check <card|mm|yyyy|cvc>.\n"
+        "You can use /reset at any time to remove your site."
+    )
     return WAIT_SITE
 
 def setsite(update, context):
@@ -293,7 +297,11 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     updater = Updater(TELEGRAM_TOKEN, use_context=True)
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('start', start), CommandHandler('setsite', setsite), CommandHandler('reset', reset)],
+        entry_points=[
+            CommandHandler('start', start),
+            CommandHandler('setsite', setsite),
+            CommandHandler('reset', reset)
+        ],
         states={
             WAIT_SITE: [
                 CommandHandler('setsite', setsite),
